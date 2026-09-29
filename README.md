@@ -1,11 +1,7 @@
-<div align="center">
-
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-still.svg">
   <img src="assets/hero.svg" alt="KUSHAGRA — Maths · CS · AI, above a pixel waveform. x tends to infinity. London, UK." width="720">
 </picture>
-
-</div>
 
 <picture>
   <source media="(max-width: 480px)" srcset="assets/heading-about-mobile.svg">
