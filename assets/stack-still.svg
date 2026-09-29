@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="84" viewBox="0 0 720 84" role="img" aria-labelledby="title desc">
+  <title id="title">Technology stack</title>
+  <desc id="desc">Python, TypeScript, Rust, C++, Swift, React, Node.js, and Git.</desc>
+<rect width="720" height="84" fill="#0D1211"/><rect x="1" y="1" width="718" height="82" fill="none" stroke="#2D4039" stroke-width="2" shape-rendering="crispEdges"/><g font-family="Consolas, Courier New, monospace" font-size="23" fill="#E5ECE9"><text x="27" y="32">PYTHON · TYPESCRIPT · RUST · C++</text><text x="27" y="59">SWIFT · REACT · NODE.JS · GIT</text></g>
+</svg>

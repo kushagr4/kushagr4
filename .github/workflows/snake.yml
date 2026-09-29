@@ -1,0 +1,82 @@
+name: Update contribution trace
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - assets/contribution-snake.svg
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-trace
+  cancel-in-progress: true
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate animated SVG
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/contribution-snake.svg?color_snake=#65D1B7&color_dots=#151F1C,#22453A,#2F7567,#449884,#78DCC3
+
+      - name: Match the README palette
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          path = Path('assets/contribution-snake.svg')
+          namespace = 'http://www.w3.org/2000/svg'
+          ET.register_namespace('', namespace)
+          ET.register_namespace('xlink', 'http://www.w3.org/1999/xlink')
+          tree = ET.parse(path)
+          root = tree.getroot()
+          box = root.get('viewBox')
+          if box:
+              x, y, width, height = box.replace(',', ' ').split()
+          else:
+              x, y = '0', '0'
+              width, height = root.get('width'), root.get('height')
+              if not width or not height:
+                  raise ValueError('Generated SVG has no dimensions')
+
+          title = ET.Element(f'{{{namespace}}}title', {'id': 'snake-title'})
+          title.text = 'Kushagra GitHub contribution trace'
+          root.insert(0, title)
+          root.set('role', 'img')
+          root.set('aria-labelledby', 'snake-title')
+          background = ET.Element(f'{{{namespace}}}rect', {
+              'x': x, 'y': y, 'width': width, 'height': height,
+              'fill': '#0D1211',
+          })
+          root.insert(1, background)
+          frame = ET.Element(f'{{{namespace}}}rect', {
+              'x': x, 'y': y, 'width': width, 'height': height,
+              'fill': 'none', 'stroke': '#2D4039', 'stroke-width': '2',
+          })
+          root.append(frame)
+          reduced_motion = ET.Element(f'{{{namespace}}}style')
+          reduced_motion.text = '@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }'
+          root.append(reduced_motion)
+          tree.write(path, encoding='utf-8', xml_declaration=True)
+          PY
+
+      - name: Commit updated trace
+        run: |
+          git add assets/contribution-snake.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Update contribution trace'
+          git push
