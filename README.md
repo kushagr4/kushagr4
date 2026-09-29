@@ -54,5 +54,5 @@ Usually building something that probably didn't need to be built.
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/footer-still.svg">
-  <img src="assets/footer.svg" alt="Terminal prompt: kushagra at github, with a blinking cursor." width="720">
+  <img src="assets/footer.svg" alt="Terminal prompt: kushagr4 at github, with a blinking cursor." width="720">
 </picture>
