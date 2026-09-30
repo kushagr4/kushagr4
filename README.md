@@ -8,18 +8,15 @@
   <img src="assets/heading-about.svg" alt="ABOUT" width="720">
 </picture>
 
-Mathematics, computer science and AI.<br>
-Usually building something that probably didn't need to be built.
+`BUILD` native apps · web platforms · developer tools<br>
+`FOCUS` AI · algorithms · mathematics · interactive systems<br>
+<code>SHIP&nbsp;</code> architecture → implementation → testing → deployment
 
-<picture>
-  <source media="(max-width: 480px)" srcset="assets/heading-currently-mobile.svg">
-  <img src="assets/heading-currently.svg" alt="CURRENTLY" width="720">
-</picture>
+ClaudeShark is a Python chess engine I built for an AI Chessathon, using iterative-deepening alpha-beta search and Numba optimisation. Revisr is a native study platform built around thousands of admissions-test questions, resources and progress data.
 
-<picture>
-  <source media="(max-width: 480px)" srcset="assets/currently-mobile.svg">
-  <img src="assets/currently.svg" alt="Learning mathematics; building software; experimenting with AI." width="720">
-</picture>
+myBoard is an interactive mathematical whiteboard built with Rust and Tauri. BotPoker is a full-stack platform for autonomous poker agents.
+
+Across these projects I've worked on algorithm design, optimisation, native and web apps, database-backed systems, UI/UX, automated testing, debugging and deployment. My tools include Python, TypeScript, Rust, Swift, C++, React and Node.js.
 
 <picture>
   <source media="(max-width: 480px)" srcset="assets/heading-stack-mobile.svg">

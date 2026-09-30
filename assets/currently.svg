@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="160" viewBox="0 0 720 160" role="img" aria-labelledby="title desc">
-  <title id="title">Currently</title>
-  <desc id="desc">Learning mathematics, building software, and experimenting with AI.</desc>
-<rect width="720" height="160" fill="#0D1211"/><rect x="1" y="1" width="718" height="158" fill="none" stroke="#2D4039" stroke-width="2" shape-rendering="crispEdges"/><path d="M26 22V140" stroke="#2F7567" stroke-width="2" shape-rendering="crispEdges"/><g font-family="Consolas, Courier New, monospace" font-size="25"><text x="48" y="50" fill="#65D1B7">learning</text><text x="286" y="50" fill="#889792">→</text><text x="330" y="50" fill="#E5ECE9">mathematics</text><text x="48" y="93" fill="#65D1B7">building</text><text x="286" y="93" fill="#889792">→</text><text x="330" y="93" fill="#E5ECE9">software</text><text x="48" y="136" fill="#65D1B7">experimenting</text><text x="286" y="136" fill="#889792">→</text><text x="330" y="136" fill="#E5ECE9">AI</text></g>
-</svg>
